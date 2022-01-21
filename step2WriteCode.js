@@ -1,17 +1,21 @@
 ///// 1) Sum Zero ///////
 
-function sumZero (num1, num2) {
-    if(num1 + num2 === 0){
-        return true
-    } else {
-        return false
+function sumZero(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 1; j < arr.length; j++) {
+            if(arr[i] + arr[j] === 0){
+                return true
+            } else {
+                return false
+            }
+        }
     }
 }
 
-console.log(sumZero(2,2))
-console.log(sumZero(3,-3))
+console.log(sumZero([2, 2, 5, 5])) //false
+console.log(sumZero([3,-3])) //true
 
-///// code runtime = O(1) ///////////////
+///// code runtime = O(n squared) ///////////////
 
 ///// 2) Unique Characters //////////
 
@@ -25,10 +29,10 @@ function hasUniqueChars(str) {
     }
 }
 
-hasUniqueChars("coffee")
-hasUniqueChars("tea")
+hasUniqueChars("coffee") //false
+hasUniqueChars("tea") //true
 
-/////code runtime:    O(1)     /////////////////
+/////code runtime:    O(n)     /////////////////
 
 ///// 3) pangram sentence ////////////////////////
 
@@ -44,8 +48,8 @@ function isPangram(string){
     return true;
   }
 
-console.log(isPangram("do you like gouda?"))
-console.log(isPangram("the quick brown fox jumps over the lazy dog."))
+console.log(isPangram("do you like gouda?")) //false
+console.log(isPangram("the quick brown fox jumps over the lazy dog.")) //true
 /////// code runtime:     O(n)              //////////////////////
 
 ////// 4) longest word  ////////////////////////////////////////////////
@@ -64,13 +68,13 @@ console.log(longestWord(['hi', 'hello']))
 
 //// EXTRA CREDIT //////
 
-/// space complexity of 1)sumZero = O(1)
+/// space complexity of 1)sumZero = O(n squared)
 ///  
-/// space complexity of 2)hasUniqueChars = O(n squared)
+/// space complexity of 2)hasUniqueChars = O(n)
 ///
 /// space complexity of 3)isPangram = O(n)
 ///
-/// space complexity of 4)longestWord = O(n squared)
+/// space complexity of 4)longestWord = O(n)
 ///
 
 
